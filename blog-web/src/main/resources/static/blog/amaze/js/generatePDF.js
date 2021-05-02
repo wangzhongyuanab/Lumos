@@ -59,7 +59,7 @@ function exportReportTemplet() {
                 }
             }
         }
-        pdf.save('敲代码的长腿毛欧巴的个人简历.pdf');
+        pdf.save('mark的个人简历.pdf');
     })
 
 }

@@ -19,8 +19,7 @@ import static java.util.Objects.isNull;
 
 
 @Component
-public class
-AdminLoginInterceptor implements HandlerInterceptor {
+public class AdminLoginInterceptor implements HandlerInterceptor {
     @Autowired
     private RedisUtil redisUtil;
     @Override

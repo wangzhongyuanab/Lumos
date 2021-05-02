@@ -9,6 +9,9 @@ import java.security.MessageDigest;
  * @createDate 2020/1/1
 */
 public class MD5Util {
+    public static void main(String[] args) {
+        System.out.println(md5Encode("wangzhongyuan", "UTF-8"));
+    }
 
     private static String byteArrayToHexString(byte b[]) {
         StringBuffer resultSb = new StringBuffer();
