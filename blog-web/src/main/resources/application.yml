@@ -1,10 +1,10 @@
 #博客版本信息
 blog:
   version: 1.0.0 beta
-  author: 敲代码的长腿毛欧巴
+  author: Mark
   #博客的开始运行日期
   run:
-    date: 2020-01-01
+    date: 2021-05-01
 spring:
   main:
     allow-bean-definition-overriding: true
@@ -25,7 +25,7 @@ spring:
     slave:
       jdbc-url: jdbc:mysql://localhost:3306/my_blog_db?useUnicode=true&characterEncoding=utf8&autoReconnect=true&useSSL=false&serverTimezone=UTC
       username: root
-      password: ren123
+      password: root
       driver-class-name: com.mysql.cj.jdbc.Driver
       type: com.zaxxer.hikari.HikariDataSource
       hikari:
@@ -39,7 +39,7 @@ spring:
     master:
       jdbc-url: jdbc:mysql://localhost:3306/my_blog_db?useUnicode=true&characterEncoding=utf8&autoReconnect=true&useSSL=false&serverTimezone=UTC
       username: root
-      password: ren123
+      password: root
       driver-class-name: com.mysql.cj.jdbc.Driver
       type: com.zaxxer.hikari.HikariDataSource
       hikari:
@@ -58,8 +58,6 @@ spring:
     host: 127.0.0.1
     # Redis服务器连接端口
     port: 6379
-    # Redis服务器连接密码（默认为空）如果没有配置密码就不要写这个属性了
-    password: ren123
     #连接池
     lettuce:
       pool:
