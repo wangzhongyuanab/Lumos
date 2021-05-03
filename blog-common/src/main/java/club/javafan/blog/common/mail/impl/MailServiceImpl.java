@@ -42,7 +42,7 @@ public class MailServiceImpl implements MailService {
         message.setTo(to);
         message.setSubject(subject);
         message.setText(content);
-        message.setFrom("敲代码的长腿毛欧巴" + "<" + from + ">");
+        message.setFrom("Mark" + "<" + from + ">");
         mailSender.send(message);
     }
 
@@ -93,7 +93,7 @@ public class MailServiceImpl implements MailService {
      */
     private MimeMessageHelper buildHelper(String to, String subject, String content, MimeMessage message, String[] cc) throws MessagingException {
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
-        message.setFrom("敲代码的长腿毛欧巴" + "<" + from + ">");
+        message.setFrom("Mark" + "<" + from + ">");
         helper.setTo(to);
         if (ArrayUtils.isNotEmpty(cc)) {
             helper.setCc(cc);
