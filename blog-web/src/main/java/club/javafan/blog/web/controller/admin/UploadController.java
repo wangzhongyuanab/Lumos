@@ -44,7 +44,7 @@ public class UploadController {
         try {
             file.transferTo(destFile);
             ResponseResult resultSuccess = ResponseResult.successResult("成功！");
-            resultSuccess.setData(BlogUtils.getHost(new URI(httpServletRequest.getRequestURL() + "")) + "/upload/img/" + newFileName);
+            resultSuccess.setData(BlogUtils.getHost(new URI(httpServletRequest.getRequestURL() + "")) + "/upload/" + newFileName);
             return resultSuccess;
         } catch (IOException e) {
             return ResponseResult.failResult("文件上传失败！");
