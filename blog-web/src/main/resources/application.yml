@@ -55,7 +55,7 @@ spring:
     # Redis数据库索引（默认为0）
     database: 0
     # Redis服务器地址
-    host: localhost
+    host: 127.0.0.1
     # Redis服务器连接端口
     port: 6379
 
@@ -66,13 +66,14 @@ spring:
   mail:
     default-encoding: utf-8
     #收件人
-    to: xx@qq.com
+    to: 2275990862@qq.com
     #抄送列表 ,分隔
-    cc: xx@qq.com,xx@qq.com
+    cc: 2275990862@qq.com
     subject: 博客日报 #博客主题
-    host: smtp.exmail.qq.com
-    username: xx@javafan.club
-    password: dadasa #邮箱授权码  需要在邮箱中申请
+    host: smtp.qq.com
+    username: 2275990862@qq.com
+    #邮箱授权码  需要在邮箱中申请
+    password: etragknuecizdjcd
     properties:
       mail.smtp.auth: true
       mail.smtp.socketFactory.class: javax.net.ssl.SSLSocketFactory

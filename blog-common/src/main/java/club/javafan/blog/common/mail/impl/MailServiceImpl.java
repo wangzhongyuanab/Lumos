@@ -40,7 +40,7 @@ public class MailServiceImpl implements MailService {
     public void sendSimpleMail(String to, String subject, String content, String[] cc) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(to);
-        message.setSubject(subject);
+        message.setSubject(subject) ;
         message.setText(content);
         message.setFrom("Mark" + "<" + from + ">");
         mailSender.send(message);

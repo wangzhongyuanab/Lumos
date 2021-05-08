@@ -372,7 +372,7 @@ public class MyBlogController {
         }
         comment.setCommentBody(commentBody);
         comment.setCommentCreateTime(new Date());
-        AipContentCensorBuilder.SensorResult results = AipContentCensorBuilder.judgeText(comment.toString());
+        AipContentCensorBuilder.SensorResult results = AipContentCensorBuilder.judgeText(commentBody);
         if (!results.getCode().equals(NumberUtils.INTEGER_ZERO)) {
             return ResponseResult.failResult("评论非法！").setData(false);
         }
