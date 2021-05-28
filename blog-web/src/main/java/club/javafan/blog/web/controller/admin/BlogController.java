@@ -30,8 +30,6 @@ import java.util.Random;
 import static java.util.Objects.isNull;
 
 /**
- * @author 敲代码的长腿毛欧巴(博客)
- * @date 2019/12/25 22:21
  * @desc 后台
  */
 @Controller
@@ -57,6 +55,15 @@ public class BlogController {
     @ResponseBody
     public ResponseResult list(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10") Integer limit) {
         PageQueryUtil pageUtil = new PageQueryUtil(page, limit);
+        PageResult pageResult = blogService.getBlogsPage(pageUtil);
+        return ResponseResult.successResult("成功！").setData(pageResult);
+    }
+
+    @GetMapping("/blogs/list/search")
+    @ResponseBody
+    public ResponseResult listByKeyword(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10") Integer limit,String keyword) {
+        PageQueryUtil pageUtil = new PageQueryUtil(page, limit);
+        pageUtil.put("keyword",keyword);
         PageResult pageResult = blogService.getBlogsPage(pageUtil);
         return ResponseResult.successResult("成功！").setData(pageResult);
     }

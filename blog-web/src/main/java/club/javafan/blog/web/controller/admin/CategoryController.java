@@ -14,8 +14,6 @@ import javax.annotation.Resource;
 import java.util.Objects;
 
 /**
- * @author 敲代码的长腿毛欧巴(博客)
- * @date 2019/12/28 21:02
  * @desc 目录管理
  */
 @Controller
@@ -42,6 +40,22 @@ public class CategoryController {
             return ResponseResult.failResult("参数异常！");
         }
         PageQueryUtil pageUtil = new PageQueryUtil(page,limit);
+        PageResult blogCategoryPage = categoryService.getBlogCategoryPage(pageUtil);
+        return ResponseResult.successResult("成功！").setData(blogCategoryPage);
+    }
+
+
+    /**
+     * 分类列表
+     */
+    @RequestMapping(value = "/categories/list/search", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseResult listByKeyword(@RequestParam Integer page,@RequestParam Integer limit,String keyword) {
+        if (Objects.isNull(page) || Objects.isNull(limit)||StringUtils.isEmpty(keyword)) {
+            return ResponseResult.failResult("参数异常！");
+        }
+        PageQueryUtil pageUtil = new PageQueryUtil(page,limit);
+        pageUtil.put("keyword",keyword);
         PageResult blogCategoryPage = categoryService.getBlogCategoryPage(pageUtil);
         return ResponseResult.successResult("成功！").setData(blogCategoryPage);
     }
@@ -82,7 +96,7 @@ public class CategoryController {
         if (aBoolean) {
             return ResponseResult.successResult("成功！！");
         } else {
-            return ResponseResult.failResult("分类名称重复");
+            return ResponseResult.failResult("修改分类失败，分类已存在");
         }
     }
 

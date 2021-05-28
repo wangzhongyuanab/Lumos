@@ -1,8 +1,6 @@
 package club.javafan.blog.common.constant;
 
 /**
- * @author 敲代码的长腿毛欧巴
- * @date 2020/3/10
  * @desc cache 的前缀
  */
 public class CacheConstant {

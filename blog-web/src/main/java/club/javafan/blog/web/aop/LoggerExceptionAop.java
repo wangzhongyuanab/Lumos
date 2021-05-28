@@ -25,8 +25,6 @@ import static club.javafan.blog.common.util.DateUtils.getToday;
 import static java.util.Objects.isNull;
 
 /**
- * @author 敲代码的长腿毛欧巴(博客)
- * @date 2019/12/10 22:57
  * @desc 日志处理和异常处理切面。主要作用打印入参和返回结果。
  * 也可以捕获异常。有条件的话可以吧捕获的异常做异常上报
  */

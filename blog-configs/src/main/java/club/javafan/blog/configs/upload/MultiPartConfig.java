@@ -9,8 +9,6 @@ import javax.servlet.MultipartConfigElement;
 import java.io.File;
 
 /**
- * @author 敲代码的长腿毛欧巴
- * @date 2020/3/26
  * 文件上传呢配置类
  */
 @Configuration

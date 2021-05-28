@@ -18,8 +18,6 @@ import java.util.stream.Collectors;
 import static org.apache.commons.lang3.math.NumberUtils.INTEGER_ZERO;
 
 /**
- * @author 敲代码的长腿毛欧巴(博客)
- * @date 2INTEGER_ZERO19/12/25 21:INTEGER_ZERO8
  * @desc 博客友情链接服务
  */
 @Service

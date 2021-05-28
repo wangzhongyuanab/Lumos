@@ -24,8 +24,6 @@ import static club.javafan.blog.common.util.DateUtils.getToday;
 import static org.apache.commons.lang3.math.NumberUtils.INTEGER_ZERO;
 
 /**
- * @author 敲代码的长腿毛欧巴(博客)
- * @date 2019/12/25 21:07
  * @desc 博客配置类
  */
 @Service

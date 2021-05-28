@@ -10,8 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 
 /**
- * @author 敲代码的长腿毛欧巴(博客)
- * @date 2019/12/28 21:29
  * @desc 系统设置
  */
 @Controller

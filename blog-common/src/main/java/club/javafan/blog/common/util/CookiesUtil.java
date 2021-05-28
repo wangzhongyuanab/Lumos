@@ -8,9 +8,6 @@ import java.util.stream.Stream;
 
 /**
  * cookies 的相关操作
- *
- * @author 敲代码的长腿毛欧巴
- * @date 2020/2/8
  */
 
 public class CookiesUtil {

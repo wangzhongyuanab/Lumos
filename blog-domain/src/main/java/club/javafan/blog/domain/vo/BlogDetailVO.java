@@ -3,8 +3,6 @@ package club.javafan.blog.domain.vo;
 import java.util.Date;
 import java.util.List;
 /**
- * @author 敲代码的长腿毛欧巴(博客)
- * @date 2019/12/11 21:53
  * @desc 博客详情VO
  */
 public class BlogDetailVO {

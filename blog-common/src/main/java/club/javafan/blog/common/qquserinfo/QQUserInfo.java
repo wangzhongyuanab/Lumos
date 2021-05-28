@@ -15,10 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 
-/**
- * @author 敲代码的长腿毛欧巴
- * @date 2020/3/4
- */
+
 @Service("qqUserInfo")
 public class QQUserInfo {
     /**

@@ -15,8 +15,6 @@ import javax.annotation.Resource;
 import static java.util.Objects.isNull;
 
 /**
- * @author 敲代码的长腿毛欧巴(博客)
- * @date 2019/12/28 21:30
  * @desc 友情链接设置
  */
 @Controller
@@ -40,6 +38,18 @@ public class LinkController {
             return ResponseResult.failResult("参数错误！");
         }
         PageQueryUtil pageUtil = new PageQueryUtil(page,limit);
+        PageResult blogLinkPage = linkService.getBlogLinkPage(pageUtil);
+        return ResponseResult.successResult().setData(blogLinkPage);
+    }
+
+    @GetMapping("/links/list/search")
+    @ResponseBody
+    public ResponseResult listByKeyword(@RequestParam Integer page,@RequestParam Integer limit,String keyword) {
+        if (isNull(page) || isNull(limit)||StringUtils.isEmpty(keyword)) {
+            return ResponseResult.failResult("参数错误！");
+        }
+        PageQueryUtil pageUtil = new PageQueryUtil(page,limit);
+        pageUtil.put("keyword",keyword);
         PageResult blogLinkPage = linkService.getBlogLinkPage(pageUtil);
         return ResponseResult.successResult().setData(blogLinkPage);
     }

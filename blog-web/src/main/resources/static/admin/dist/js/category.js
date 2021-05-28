@@ -69,6 +69,28 @@ function reload() {
     }).trigger("reloadGrid");
 }
 
+/**
+ * 搜索功能
+ */
+function search() {
+    //标题关键字
+    var keyword = $('#keyword').val();
+    if (!validLength(keyword, 20)) {
+        swal("搜索字段长度过大!", {
+            icon: "error",
+        });
+        return false;
+    }
+    //数据封装
+    var searchData = {keyword: keyword};
+    //传入查询条件参数
+    $("#jqGrid").jqGrid("setGridParam", {postData: searchData});
+    //点击搜索按钮默认都从第一页开始
+    $("#jqGrid").jqGrid("setGridParam", {page: 1});
+    //提交post并刷新表格
+    $("#jqGrid").jqGrid("setGridParam", {url: '/admin/categories/list/search'}).trigger("reloadGrid");
+}
+
 function categoryAdd() {
     reset();
     $('.modal-title').html('分类添加');

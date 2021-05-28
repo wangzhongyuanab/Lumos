@@ -14,8 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 
 /**
- * @author 敲代码的长腿毛欧巴(博客)
- * @date 2019/12/28 21:39
  * @desc 标签管理
  */
 @Controller
@@ -36,6 +34,15 @@ public class TagController {
     @ResponseBody
     public ResponseResult list(@RequestParam Integer page,@RequestParam Integer limit) {
         PageQueryUtil pageUtil = new PageQueryUtil(page,limit);
+        PageResult blogTagPage = tagService.getBlogTagPage(pageUtil);
+        return ResponseResult.successResult().setData(blogTagPage);
+    }
+
+    @GetMapping("/tags/list/search")
+    @ResponseBody
+    public ResponseResult listByKeyword(@RequestParam Integer page,@RequestParam Integer limit,String keyword) {
+        PageQueryUtil pageUtil = new PageQueryUtil(page,limit);
+        pageUtil.put("keyword",keyword);
         PageResult blogTagPage = tagService.getBlogTagPage(pageUtil);
         return ResponseResult.successResult().setData(blogTagPage);
     }

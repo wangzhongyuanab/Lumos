@@ -248,6 +248,9 @@
     <include refid="Base_Column_List"/>
     from tb_blog_category
     where is_deleted=0
+    <if test="keyword!=null">
+      AND category_name like CONCAT('%',#{keyword},'%' )
+    </if>
     order by category_rank desc,create_time desc
     <if test="start!=null and limit!=null">
       limit #{start},#{limit}

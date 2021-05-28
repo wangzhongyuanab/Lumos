@@ -18,8 +18,6 @@ import java.util.Objects;
 import static org.apache.commons.lang3.math.NumberUtils.INTEGER_ZERO;
 
 /**
- * @author 敲代码的长腿毛欧巴(博客)
- * @date 2019/12/11 22:12
  * @desc 管理员登录服务类
  */
 @Service

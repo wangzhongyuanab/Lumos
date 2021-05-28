@@ -21,8 +21,6 @@ import java.util.Objects;
 import static org.apache.commons.lang3.math.NumberUtils.INTEGER_ZERO;
 
 /**
- * @author 敲代码的长腿毛欧巴(博客)
- * @date 2019/12/25 21:06
  * @desc 目录
  */
 @Service
@@ -67,7 +65,10 @@ public class CategoryServiceImpl implements CategoryService {
     @Transactional
     public Boolean updateCategory(Integer categoryId, String categoryName, String categoryIcon) {
         BlogCategory blogCategory = blogCategoryMapper.selectByPrimaryKey(categoryId);
-        if (Objects.isNull(blogCategory)) {
+        if (blogCategory.getCategoryName().equals(categoryName)){
+            return false;
+        }
+        if (!Objects.isNull(blogCategory)) {
             blogCategory.setCategoryIcon(categoryIcon);
             blogCategory.setCategoryName(categoryName);
             //修改分类实体

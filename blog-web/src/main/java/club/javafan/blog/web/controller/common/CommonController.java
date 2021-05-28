@@ -12,11 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 
-/**
- * @author 敲代码的长腿毛欧巴(博客)
- * @date 2019/12/28 22:14
- * @desc
- */
+
+
 @Controller
 public class CommonController {
 

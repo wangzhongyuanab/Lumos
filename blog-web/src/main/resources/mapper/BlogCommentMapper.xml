@@ -383,6 +383,9 @@
     <if test="blogId!=null">
       AND blog_id = #{blogId}
     </if>
+    <if test="keyword!=null">
+      AND comment_body like CONCAT('%',#{keyword},'%' )
+    </if>
     <if test="commentStatus!=null">
       AND comment_status = #{commentStatus}
     </if>

@@ -40,6 +40,10 @@
                             <button class="btn btn-danger" onclick="deleteComments()"><i
                                     class="fa fa-trash-o"></i>&nbsp;批量删除
                             </button>
+                            <input type="text" placeholder="关键字(评论内容)" id="keyword" class="form-control col-2">&nbsp;
+                            <button class="btn btn-info" onclick="search()"><i
+                                    class="fa fa-search"></i>&nbsp;搜索
+                            </button>
                         </div>
                         <!-- JqGrid必要DOM,用于创建表格展示列表数据 -->
                         <table id="jqGrid" class="table table-bordered"></table>

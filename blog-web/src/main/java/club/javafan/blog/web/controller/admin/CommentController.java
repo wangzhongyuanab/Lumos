@@ -18,8 +18,6 @@ import javax.annotation.Resource;
 import java.util.Objects;
 
 /**
- * @author 敲代码的长腿毛欧巴(博客)
- * @date 2019/12/28 21:22
  * @desc 评论管理
  */
 @Controller
@@ -43,6 +41,18 @@ public class CommentController {
             return ResponseResult.failResult("参数异常！");
         }
         PageQueryUtil pageUtil = new PageQueryUtil(page,limit);
+        PageResult commentsPage = commentService.getCommentsPage(pageUtil);
+        return ResponseResult.successResult("成功！").setData(commentsPage);
+    }
+
+    @GetMapping("/comments/list/search")
+    @ResponseBody
+    public ResponseResult listByKeyWord(@RequestParam Integer page, @RequestParam Integer limit,String keyword) {
+        if (Objects.isNull(page) || Objects.isNull(limit)||StringUtils.isEmpty(keyword)) {
+            return ResponseResult.failResult("参数异常！");
+        }
+        PageQueryUtil pageUtil = new PageQueryUtil(page,limit);
+        pageUtil.put("keyword",keyword);
         PageResult commentsPage = commentService.getCommentsPage(pageUtil);
         return ResponseResult.successResult("成功！").setData(commentsPage);
     }
